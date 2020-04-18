@@ -59,7 +59,6 @@ const buy = false;
 		'--disable-web-security'
 	    ],
 	    headless: false,
-	    executablePath: '/gnu/store/5s6kdzyq63818ww8ip573vmi8zi6pin4-profile/bin/chromium'
 	    	});
     
     const page = await browser.newPage();
