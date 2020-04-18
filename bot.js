@@ -62,14 +62,8 @@ const buy = false;
 	    	});
     
     const page = await browser.newPage();
-//    await page.setCacheEnabled(false);
 
-    // const anonsButton = await page.evaluate(async () => {
-    // const button = document.querySelectorAll('button[data-qa=add-to-cart]')[0];
-    // return Promise.resolve(button);
-    // });
-
-
+					
 //        await page.authenticate({'username':'YOUR_BASIC_AUTH_USERNAME', 'password': 'YOUR_BASIC_AUTH_PASSWORD'});
 
 
@@ -93,13 +87,11 @@ const buy = false;
 		log.setLevel('info');	
 		
 	}
-
-    await page.setDefaultNavigationTimeout(0);
+    await page.setDefaultTimeout(0);
+    await page.setDefaultNavigationTimeout(0); // set timeouts to 0 (null), my wifi sucks
     await page.goto(url);
     page.waitForNavigation({ waitUntil: 'networkidle0' }); // Wait for page to finish loading
 
-    await page.setDefaultNavigationTimeout(0);
-    await page.setDefaultTimeout(0);
 	
 	
 	
@@ -202,15 +194,12 @@ const buy = false;
 	// ##################################################
 	// ##################################################
 	// ################################## ROUND 5	
-    // Click the add to cart button
-//    await page.authenticate({'username':'nikebot@cock.li', 'password': '123456!@#$%^qwertyASDFGH'});
-    await page.authenticate(null);
-	await page.evaluate(() =>
-			    document.querySelectorAll('button[data-qa=add-to-cart]')[0].click()
-    			   );
-//    button.click()
-    console.log("clicked");
-
+    	// Click the add to cart button
+	    await page.authenticate(null);
+		await page.evaluate(() =>
+				    document.querySelectorAll('button[data-qa=add-to-cart]')[0].click()
+    				   );
+	console.log("clicked");
 
     //#### LOG / DEBUG
 	if(debug == true){	
@@ -221,6 +210,11 @@ const buy = false;
 	}
     //#### LOG / DEBUG END
 
+	
+	// ##################################################
+	// ##################################################
+	// ################################## ROUND 5	
+    	// Click the checkout pop-up button
 	await page.waitForSelector('button[data-qa=checkout-link]');
         await page.evaluate(() =>
 			    document.querySelectorAll('button[data-qa=checkout-link]')[0].click()
@@ -238,7 +232,7 @@ const buy = false;
 	await page.waitFor(500);	
 	
 
-    // ##################################################
+        // ##################################################
 	// ##################################################
 	// ################################## ROUND 6
 	// Login
@@ -273,6 +267,10 @@ const buy = false;
 	await page.waitFor(500);	
 	
 	
+         // ##################################################
+	// ##################################################
+	// ################################## ROUND ????
+	// I don't think it works properly beyond this point yet
 	
 	
 	// ##################################################
@@ -330,8 +328,6 @@ const buy = false;
 	//#### LOG / DEBUG END
 	
 	await page.waitFor(500);		
-	
-	
 	
 	
 	
