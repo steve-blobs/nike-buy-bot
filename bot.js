@@ -22,17 +22,16 @@ let html = '';
 // Parameters to set
 
 // user/pass: the email/username for your Nike.com account
-const user = 'nikebot@cock.li'
-const pass = '123456!@#$%^qwertyASDFGH'
+const user = 'email@address'
+const pass = 'password'
 
 // cv_code: 3-digit credit card validation code for the card saved to your Nike.com account
-const cv_code = '500';
+const cv_code = 'cvc';
 
 // size: the shoe size, as you see in the table of sizes on a product page, e.g., 'M 9 / W 10.5'
 const size = 'M 15 / W 16.5';
 
 // url: url to the shoe page, e.g., 'https://www.nike.com/us/launch/t/kobe-4-protro-wizenard/'
-//const url = 'https://www.nike.com/launch/t/snkrs-classics-1/';
 const url = 'https://www.nike.com/launch/t/air-max-1-huarache-dna-ch1-pack'
 
 // debug: Use debug/logging features?
